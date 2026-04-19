@@ -68,7 +68,7 @@ sudo mn --topo single,3 --controller=remote,ip=127.0.0.1,port=6633
 ./pox.py log.level --DEBUG openflow.of_01 arp_controller
 ```
 
-![Controller](screenshots/controller.png)
+![Controller](Screenshots/controller.png)
 
 **Observation:** Controller starts and listens for connections.
 
@@ -80,7 +80,7 @@ sudo mn --topo single,3 --controller=remote,ip=127.0.0.1,port=6633
 net
 ```
 
-![Topology](Screenshots/topology.png)
+![Topology](Screenshots/topology.jpeg)
 
 **Observation:** h1, h2, h3 connected to switch s1.
 
