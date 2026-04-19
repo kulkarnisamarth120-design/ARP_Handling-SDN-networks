@@ -68,7 +68,7 @@ sudo mn --topo single,3 --controller=remote,ip=127.0.0.1,port=6633
 ./pox.py log.level --DEBUG openflow.of_01 arp_controller
 ```
 
-![Controller](screenshots/controller.jpg)
+![Controller](screenshots/controller.png)
 
 **Observation:** Controller starts and listens for connections.
 
@@ -80,7 +80,7 @@ sudo mn --topo single,3 --controller=remote,ip=127.0.0.1,port=6633
 net
 ```
 
-![Topology](screenshots/topology.jpeg)
+![Topology](Screenshots/topology.png)
 
 **Observation:** h1, h2, h3 connected to switch s1.
 
@@ -92,7 +92,7 @@ net
 h1 ping h2
 ```
 
-![Ping Allowed](screenshots/ping_allowed.png)
+![Ping Allowed](Screenshots/ping_allowed.png)
 
 **Observation:** Ping is successful.
 
@@ -104,7 +104,7 @@ h1 ping h2
 h1 ping h3
 ```
 
-![Ping Blocked](screenshots/ping_blocked.png)
+![Ping Blocked](Screenshots/ping_blocked.png)
 
 **Observation:** Ping fails due to controller rule.
 
@@ -116,7 +116,7 @@ h1 ping h3
 sudo ovs-ofctl dump-flows s1 | sed 's/,/\n/g'
 ```
 
-![Flow Table](screenshots/flow_table.png)
+![Flow Table](Screenshots/flow_table.png)
 
 **Observation:** Drop rule is installed for h1 → h3.
 
@@ -129,7 +129,7 @@ h2 iperf -s &
 h1 iperf -c h2
 ```
 
-![iperf](screenshots/iperf.png)
+![iperf](Screenshots/iperf.png)
 
 **Observation:** Data transfer works between allowed hosts.
 
@@ -137,7 +137,7 @@ h1 iperf -c h2
 
 ### Controller Logs
 
-![Controller Logs](screenshots/controller_logs.jpg)
+![Controller Logs](Screenshots/controller_logs.png)
 
 **Observation:** Controller processes ARP and blocks h1 → h3.
 
